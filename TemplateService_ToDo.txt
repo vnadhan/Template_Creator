@@ -1,0 +1,45 @@
+Service should contain the following.
+
+1. Ability to choose a type of template based on the input.
+
+	eg)  Welcome template,   loan reminder template etc..    
+    so input to this function could be a a string or some number which corresponds to the type of template
+
+
+Eg)   public static final int LOAN_REMINDER_TEMPLATE = 1
+                              APPROVAL_REMINDER_TEMPLATE = 2  ....
+
+resolveTemplate(int template,  Map template Data) throws RuntimeException... 
+..     Can locale be got from the application context or from http request?
+
+String[]   getAllTemplateNames()
+
+   this will return  LoanReminderTemplate,  WelcomeTemplate,  .... 
+
+String getTemplateDetail(int templateType)
+	returns  say wecome.vm
+
+Map getAllTemplates() {
+	map.put( LOAN_REMINDER_TEMPLATE, "loanReminder.vm");
+        map.put (wELCOME_TEMPLATE, "welcome.vm");
+	return map;
+)
+
+public string getMessage(int templateType,  Map dataMap, Locale)  throws Runtime... 
+
+
+getTemplate(int template)
+
+Have a directory taken from some configuration file.,  where all the templates are stored
+
+             It could be placed under  say  CATALINA_HOME/config/templates  directory... 
+	     Also,  all the language related message resources could be under /config/resources  directory.... 
+
+
+table / collection, which holds   name to type.,  eg)  WELCOME_MAIL_TEMPLATE,   welcome.vm
+                                                       LOAN_REMINDER_TEMPLATE,  loanReminder.vm
+
+ 
+
+
+key is the name of the template and value is the filename.
